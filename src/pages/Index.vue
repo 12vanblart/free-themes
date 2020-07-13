@@ -31,16 +31,6 @@
           min="0"
           dense
         >
-          <template v-slot:append>
-            <v-text-field
-              v-model="slider"
-              single-line
-              type="number"
-              class="mt-0 mb-0 pa-0"
-              style="width: 65px"
-            >
-            </v-text-field>
-          </template>
         </v-slider>
       </v-col>
     </v-row>
