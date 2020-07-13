@@ -7,11 +7,15 @@ import DefaultLayout from "~/layouts/Default.vue";
 
 export default function(Vue, { appOptions, router, head, isClient }) {
   head.link.push({
+    rel: "preconnect",
+    href: "https://fonts.gstatic.com/",
+    crossorigin: true,
+  });
+  head.link.push({
     rel: "stylesheet",
     href:
       "https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap",
   });
-
   const opts = {};
   // Add Vuetify Options here ^^
   Vue.use(Vuetify);
