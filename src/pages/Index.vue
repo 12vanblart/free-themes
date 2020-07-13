@@ -1,35 +1,75 @@
 <template>
   <Layout>
     <v-row>
-      <v-color-picker
-        class="mx-auto my-10"
-        mode="hexa"
-        show-swatches
-        :swatches="swatchOpts"
-        v-model="color1"
-      ></v-color-picker>
-      <v-color-picker
-        class="mx-auto my-10"
-        mode="hexa"
-        show-swatches
-        :swatches="swatchOpts"
-        v-model="color2"
-      ></v-color-picker>
+      <v-col>
+        <v-color-picker
+          class="mx-auto my-10"
+          mode="hexa"
+          show-swatches
+          :swatches="swatchOpts"
+          v-model="color1"
+        ></v-color-picker>
+      </v-col>
+      <v-col>
+        <v-color-picker
+          class="mx-auto my-10"
+          mode="hexa"
+          show-swatches
+          :swatches="swatchOpts"
+          v-model="color2"
+        ></v-color-picker>
+      </v-col>
     </v-row>
+
+    <v-row justify="center">
+      <v-col cols="12" class="pt-0 pb-0" md="6">
+        <v-slider
+          label="Degrees"
+          v-model="slider"
+          thumb-label="always"
+          max="180"
+          min="0"
+          dense
+        >
+          <template v-slot:append>
+            <v-text-field
+              v-model="slider"
+              single-line
+              type="number"
+              class="mt-0 mb-0 pa-0"
+              style="width: 65px"
+            >
+            </v-text-field>
+          </template>
+        </v-slider>
+      </v-col>
+    </v-row>
+
     <v-row>
       <v-spacer></v-spacer>
       <v-sheet
         width="300"
-        height="300"
+        height="150"
         elevation="10"
         class=""
         :style="{
           background:
-            'linear-gradient(135deg, ' + color1 + ' 0%, ' + color2 + ' 100%)',
+            'linear-gradient(' +
+            slider +
+            'deg, ' +
+            color1 +
+            ' 0%, ' +
+            color2 +
+            ' 100%)',
         }"
       >
       </v-sheet>
       <v-spacer></v-spacer>
+    </v-row>
+    <v-row justify="center" class="mt-5">
+      <v-btn rounded color="primary" @click="copyCSS">
+        Copy CSS
+      </v-btn>
     </v-row>
   </Layout>
 </template>
@@ -55,9 +95,34 @@ export default {
       ],
       color1: "#C7FFE2",
       color2: "#716799",
+      slider: "135",
     };
+  },
+  computed: {
+    cssText: function() {
+      return (
+        "background: linear-gradient(" +
+        this.slider +
+        "deg, " +
+        this.color1 +
+        " 0%, " +
+        this.color2 +
+        " 100%)"
+      );
+    },
+  },
+  methods: {
+    copyCSS: function() {
+      const el = document.createElement("textarea");
+      el.value = this.cssText;
+      el.setAttribute("readonly", "");
+      el.style.position = "absolute";
+      el.style.left = "-9999px";
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand("copy");
+      document.body.removeChild(el);
+    },
   },
 };
 </script>
-
-<style></style>
