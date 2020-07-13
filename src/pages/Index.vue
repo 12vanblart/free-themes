@@ -78,6 +78,7 @@
 export default {
   metaInfo: {
     title: "Free Color Gradients",
+    meta: [{ name: "description", content: "CSS Gradient Sampler" }],
   },
   data() {
     return {
