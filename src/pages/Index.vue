@@ -6,6 +6,7 @@
           class="mx-auto my-10"
           mode="hexa"
           show-swatches
+          hide-mode-switch
           :swatches="swatchOpts"
           v-model="color1"
         ></v-color-picker>
@@ -15,6 +16,7 @@
           class="mx-auto my-10"
           mode="hexa"
           show-swatches
+          hide-mode-switch
           :swatches="swatchOpts"
           v-model="color2"
         ></v-color-picker>
