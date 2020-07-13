@@ -57,7 +57,7 @@
       <v-spacer></v-spacer>
     </v-row>
     <v-row justify="center" class="mt-5">
-      <v-btn rounded color="primary" @click="copyCSS">
+      <v-btn rounded color="primary" @click="copyCSS" aria-label="Copy CSS">
         Copy CSS
       </v-btn>
     </v-row>
