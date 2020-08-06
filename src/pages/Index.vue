@@ -82,6 +82,11 @@ export default {
         name: "twitter:title",
         content: "Free CSS Gradient Generator",
       },
+      {
+        key: "twitter:card",
+        name: "twitter:card",
+        content: "summary",
+      },
     ],
   },
   data() {
