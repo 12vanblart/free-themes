@@ -87,6 +87,11 @@ export default {
         name: "twitter:card",
         content: "summary",
       },
+      {
+        key: "twitter:image",
+        name: "twitter:image",
+        content: "../favicon.png",
+      },
     ],
   },
   data() {
