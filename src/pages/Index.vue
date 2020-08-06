@@ -70,7 +70,19 @@
 export default {
   metaInfo: {
     title: "Free Color Gradients",
-    meta: [{ name: "description", content: "CSS Gradient Sampler" }],
+    meta: [
+      { name: "description", content: "CSS Gradient Sampler" },
+      {
+        key: "og:title",
+        name: "og:title",
+        content: "Free CSS Gradient Generator",
+      },
+      {
+        key: "twitter:title",
+        name: "twitter:title",
+        content: "Free CSS Gradient Generator",
+      },
+    ],
   },
   data() {
     return {
