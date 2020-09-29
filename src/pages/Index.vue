@@ -97,7 +97,7 @@ export default {
       },
       {
         name: "og:image",
-        content: "https://gradients.terabytetiger.com/favicon.png",
+        content: "../favicon.png",
       },
     ],
     link: [
