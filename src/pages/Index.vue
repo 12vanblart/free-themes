@@ -97,7 +97,7 @@ export default {
       },
       {
         name: "og:image",
-        content: this.$static.metadata.baseURL + "favicon.png",
+        content: "https://gradients.terabytetiger.com/favicon.png",
       },
     ],
     link: [
@@ -154,11 +154,3 @@ export default {
   },
 };
 </script>
-
-<static-query>
-query {
-  metadata {
-    baseURL
-  }
-}
-</static-query>
