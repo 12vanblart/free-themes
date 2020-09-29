@@ -87,11 +87,24 @@ export default {
         name: "twitter:card",
         content: "summary",
       },
-      // {
-      //   key: "twitter:image",
-      //   name: "twitter:image",
-      //   content: "../favicon.png",
-      // },
+      {
+        name: "twitter:creator",
+        content: "@terabytetiger",
+      },
+      {
+        name: "twitter:site",
+        content: "@terabytetiger",
+      },
+      {
+        name: "og:image",
+        content: this.$static.metadata.baseURL + "favicon.png",
+      },
+    ],
+    link: [
+      {
+        rel: "canonical",
+        content: "https://gradients.terabytetiger.com/",
+      },
     ],
   },
   data() {
@@ -141,3 +154,11 @@ export default {
   },
 };
 </script>
+
+<static-query>
+query {
+  metadata {
+    baseURL
+  }
+}
+</static-query>
